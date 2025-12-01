@@ -16,7 +16,8 @@ export const VehicleBasicInfoScreen = ({ vehicule, updateField, nextStep }: Vehi
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Registro de un vehículo – Paso 1 de 3</Text>
+            <Text style={styles.title}>Registro de vehículos</Text>
+            <Text style={styles.step}>Paso 1 de 3</Text>
 
             <View style={styles.form}>
                 <FormInput
@@ -55,8 +56,14 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: 'bold',
         color: '#111827',
-        marginBottom: 24,
-        textAlign: 'center',
+        marginBottom: 4,
+        textAlign: 'left',
+    },
+    step: {
+        fontSize: 14,
+        color: '#6b7280',
+        marginBottom: 20,
+        textAlign: 'left',
     },
     form: {
         flex: 1,

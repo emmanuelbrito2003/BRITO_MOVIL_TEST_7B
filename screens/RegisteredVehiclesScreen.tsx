@@ -19,29 +19,27 @@ export const RegisteredVehiclesScreen = ({ registeredVehicules, restart }: Regis
                     <Text style={styles.emptyText}>No hay vehículos registrados aún</Text>
                 </View>
             ) : (
-                <ScrollView style={styles.tableContainer} horizontal>
-                    <View>
-                        {/* Encabezados de la tabla */}
-                        <View style={styles.tableHeader}>
-                            <Text style={[styles.tableHeaderText, styles.columnPlaca]}>PLACA</Text>
-                            <Text style={[styles.tableHeaderText, styles.columnDueño]}>DUEÑO</Text>
-                            <Text style={[styles.tableHeaderText, styles.columnMarca]}>MARCA</Text>
-                            <Text style={[styles.tableHeaderText, styles.columnModelo]}>MODELO</Text>
-                        </View>
-
-                        {/* Filas de la tabla */}
-                        <ScrollView style={styles.tableBody}>
-                            {registeredVehicules.map((vehicule, index) => (
-                                <View key={index} style={styles.tableRow}>
-                                    <Text style={[styles.tableCell, styles.columnPlaca]}>{vehicule.placa}</Text>
-                                    <Text style={[styles.tableCell, styles.columnDueño]}>{vehicule.nombreDueño}</Text>
-                                    <Text style={[styles.tableCell, styles.columnMarca]}>{vehicule.marca}</Text>
-                                    <Text style={[styles.tableCell, styles.columnModelo]}>{vehicule.modelo}</Text>
-                                </View>
-                            ))}
-                        </ScrollView>
+                <View style={styles.tableContainer}>
+                    {/* Encabezados de la tabla */}
+                    <View style={styles.tableHeader}>
+                        <Text style={[styles.tableHeaderText, styles.columnPlaca]}>PLACA</Text>
+                        <Text style={[styles.tableHeaderText, styles.columnDueño]}>DUEÑO</Text>
+                        <Text style={[styles.tableHeaderText, styles.columnMarca]}>MARCA</Text>
+                        <Text style={[styles.tableHeaderText, styles.columnModelo]}>MODELO</Text>
                     </View>
-                </ScrollView>
+
+                    {/* Filas de la tabla */}
+                    <ScrollView style={styles.tableBody}>
+                        {registeredVehicules.map((vehicule, index) => (
+                            <View key={index} style={styles.tableRow}>
+                                <Text style={[styles.tableCell, styles.columnPlaca]} numberOfLines={1} ellipsizeMode="tail">{vehicule.placa}</Text>
+                                <Text style={[styles.tableCell, styles.columnDueño]} numberOfLines={1} ellipsizeMode="tail">{vehicule.nombreDueño}</Text>
+                                <Text style={[styles.tableCell, styles.columnMarca]} numberOfLines={1} ellipsizeMode="tail">{vehicule.marca}</Text>
+                                <Text style={[styles.tableCell, styles.columnModelo]} numberOfLines={1} ellipsizeMode="tail">{vehicule.modelo}</Text>
+                            </View>
+                        ))}
+                    </ScrollView>
+                </View>
             )}
 
             <View style={styles.buttonContainer}>
@@ -98,33 +96,35 @@ const styles = StyleSheet.create({
     tableHeaderText: {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: 14,
+        fontSize: 11,
+        paddingHorizontal: 4,
     },
     tableBody: {
         backgroundColor: 'white',
     },
     tableRow: {
         flexDirection: 'row',
-        paddingVertical: 12,
-        paddingHorizontal: 8,
+        paddingVertical: 10,
+        paddingHorizontal: 4,
         borderBottomWidth: 1,
         borderBottomColor: '#e5e7eb',
     },
     tableCell: {
-        fontSize: 14,
+        fontSize: 11,
         color: '#374151',
+        paddingHorizontal: 4,
     },
     columnPlaca: {
-        width: 100,
+        width: '22%',
     },
     columnDueño: {
-        width: 150,
+        width: '30%',
     },
     columnMarca: {
-        width: 120,
+        width: '24%',
     },
     columnModelo: {
-        width: 120,
+        width: '24%',
     },
     buttonContainer: {
         alignItems: 'center',

@@ -21,7 +21,8 @@ export const VehicleDetailsScreen = ({ vehicule, updateField, nextStep, prevStep
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Registro de un vehículo – Paso 2 de 3</Text>
+            <Text style={styles.title}>Registro de vehículos</Text>
+            <Text style={styles.step}>Paso 2 de 3</Text>
 
             <View style={styles.form}>
                 <FormInput
@@ -51,7 +52,7 @@ export const VehicleDetailsScreen = ({ vehicule, updateField, nextStep, prevStep
                     label="Tipo de gasolina"
                     value={vehicule.tipoGasolina}
                     onChangeText={(text) => updateField('tipoGasolina', text)}
-                    placeholder="Ej: Super"
+                    placeholder="Ej: Ecopaís"
                 />
             </View>
 
@@ -81,8 +82,14 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: 'bold',
         color: '#111827',
-        marginBottom: 24,
-        textAlign: 'center',
+        marginBottom: 4,
+        textAlign: 'left',
+    },
+    step: {
+        fontSize: 14,
+        color: '#6b7280',
+        marginBottom: 20,
+        textAlign: 'left',
     },
     form: {
         flex: 1,

@@ -13,7 +13,8 @@ type SummaryScreenProps = {
 export const SummaryScreen = ({ vehicule, prevStep, registerVehicule }: SummaryScreenProps) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Registro de un vehículo – Paso 3 de 3</Text>
+            <Text style={styles.title}>Registro de vehículos</Text>
+            <Text style={styles.step}>Paso 3 de 3</Text>
             <Text style={styles.subtitle}>Resumen del registro</Text>
 
             <View style={styles.summaryContainer}>
@@ -73,8 +74,14 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: 'bold',
         color: '#111827',
-        marginBottom: 8,
-        textAlign: 'center',
+        marginBottom: 4,
+        textAlign: 'left',
+    },
+    step: {
+        fontSize: 14,
+        color: '#6b7280',
+        marginBottom: 4,
+        textAlign: 'left',
     },
     subtitle: {
         fontSize: 16,
